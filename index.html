@@ -11,10 +11,10 @@
 </head>
 <body>
     <div id="main_data">
-        <div onclick="transform_div_input()">설문 생성</div>
-        <div onclick="transform_div_input()">설문조사 제목</div>
+        <div>설문 생성페이지 입니다</div>
+        <div id="Srvy_title" onclick="transform_div_input(this.id)">설문조사 제목</div>
         <div>
-            <div onclick="transform_div_input()">질문1</div>
+            <div id="question_1" onclick="transform_div_input(this.id)">질문1</div>
             <div>
                 <select name="" id="">
                     <option value="1">객관식</option>
@@ -23,10 +23,10 @@
             </div>
                 <label><input type="checkbox">중복선택 허용</label>
             <form action="">
-                <label onclick="transform_div_input()"><input type="radio" name="ex">1번 보기</label><input type="button" value="보기 삭제">
-                <label onclick="transform_div_input()"><input type="radio" name="ex">2번 보기</label><input type="button" value="보기 삭제">
-                <label onclick="transform_div_input()"><input type="radio" name="ex">3번 보기</label><input type="button" value="보기 삭제">
-                <label onclick="transform_div_input()"><input type="radio" name="ex">4번 보기</label><input type="button" value="보기 삭제">
+                <label id="mul_A_1" onclick="transform_div_input(this.id)"><input type="radio" name="ex">1번 보기</label><input type="button" value="보기 삭제">
+                <label id="mul_A_2" onclick="transform_div_input(this.id)"><input type="radio" name="ex">2번 보기</label><input type="button" value="보기 삭제">
+                <label id="mul_A_3" onclick="transform_div_input(this.id)"><input type="radio" name="ex">3번 보기</label><input type="button" value="보기 삭제">
+                <label id="mul_A_4" onclick="transform_div_input(this.id)"><input type="radio" name="ex">4번 보기</label><input type="button" value="보기 삭제">
                 <input type="button" value="보기 추가">   
             </form>
             <input type="button" value="질문 추가">

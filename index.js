@@ -6,6 +6,8 @@ window.onload = function(){
     check_data = 1;
 }
 
-function transform_div_input(){
-    document.getElementById(this)
+function transform_div_input(id){
+    let value = document.getElementById(id).innerText
+    document.getElementById(id).setAttribute("onclick", "")
+    document.getElementById(id).innerHTML = '<div><input type="text" value="'+value+'"></div>'
 }
