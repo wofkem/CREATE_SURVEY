@@ -12,23 +12,22 @@
 <body>
     <div id="main_data">
         <div>설문 생성페이지 입니다</div>
-        <div id="Srvy_title" onclick="transform_div_input(this.id)">설문조사 제목</div>
+        <div id="Srvy_title"><input type="text" value="설문조사 제목" placeholder="설문조사 제목"></div>
         <div>
-            <div id="question_1" onclick="transform_div_input(this.id)">질문1</div>
+            <div id="question_1"><input type="text" value="질문1" placeholder="질문1"></div>
             <div>
                 <select name="" id="">
-                    <option value="1">객관식</option>
-                    <option value="2">주관식</option>
+                    <option value="1" name="MCQ">객관식</option>
+                    <option value="2" name="srt_ansr">단답형</option>
+                    <option value="3" name="essay">서술형</option>
                 </select>
             </div>
-                <label><input type="checkbox">중복선택 허용</label>
-            <form action="">
-                <label id="mul_A_1" onclick="transform_div_input(this.id)"><input type="radio" name="ex">1번 보기</label><input type="button" value="보기 삭제">
-                <label id="mul_A_2" onclick="transform_div_input(this.id)"><input type="radio" name="ex">2번 보기</label><input type="button" value="보기 삭제">
-                <label id="mul_A_3" onclick="transform_div_input(this.id)"><input type="radio" name="ex">3번 보기</label><input type="button" value="보기 삭제">
-                <label id="mul_A_4" onclick="transform_div_input(this.id)"><input type="radio" name="ex">4번 보기</label><input type="button" value="보기 삭제">
-                <input type="button" value="보기 추가">   
-            </form>
+            <label><input type="checkbox">중복선택 허용</label>
+            <div id="choice_opt_section">
+                <div><input type="text" value="1번 보기" placeholder="1번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div>
+                <div><input type="text" value="2번 보기" placeholder="2번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div>
+            </div>
+            <input type="button" value="보기 추가" onclick="add()">
             <input type="button" value="질문 추가">
         </div>
     </div>
