@@ -36,11 +36,20 @@ function add_Q(){
     const QA_section = document.getElementById("QA_section")
     const newDiv = document.createElement('div');
     let cnt_QA = QA_section.childElementCount+1
+    newDiv.setAttribute("id","question_"+cnt_QA)
+    newDiv.setAttribute("style","background-color: rgb(216, 224, 255); margin-top: 10px;")
 
-    newDiv.innerHTML='<div id="question_'+cnt_QA+'"><input type="text" value="질문'+cnt_QA+'" placeholder="질문'+cnt_QA+'"><div><select name="" id=""><option value="1" name="MCQ">객관식</option><option value="2" name="srt_ansr">단답형</option><option value="3" name="essay">서술형</option></select></div><label><input type="checkbox">중복선택 허용</label><div id="choice_opt_section"><div><input type="text" value="1번 보기" placeholder="1번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div><div><input type="text" value="2번 보기" placeholder="2번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div></div><input type="button" value="보기 추가" onclick="add_opt()"></div>'
+    newDiv.innerHTML='<input type="text" value="질문'+cnt_QA+'" placeholder="질문'+cnt_QA+'"><div><select name="" id=""><option value="1" name="MCQ">객관식</option><option value="2" name="srt_ansr">단답형</option><option value="3" name="essay">서술형</option></select></div><label><input type="checkbox">중복선택 허용</label><div id="choice_opt_section"><div><input type="text" value="1번 보기" placeholder="1번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div><div><input type="text" value="2번 보기" placeholder="2번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div></div><input type="button" value="보기 추가" onclick="add_opt()"><input type="button" value="질문 삭제" onclick="del(this)">'
     QA_section.appendChild(newDiv)
 }
 
-function del_Q(){
-    
+function change_form(value){
+    const change_section = document.getElementById("change_section")
+    if(value=="multi"){
+        change_section.innerHTML='<label><input type="checkbox">중복선택 허용</label><div id="choice_opt_section"><div><input type="text" value="1번 보기" placeholder="1번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div><div><input type="text" value="2번 보기" placeholder="2번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div></div><input type="button" value="보기 추가" onclick="add_opt()">'
+    }
+    else{
+        change_section.innerHTML='<input type="text" value="답 입력공간" readonly>'
+    } 
 }
+

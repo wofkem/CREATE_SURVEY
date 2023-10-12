@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- index.js -->
+    
     <script defer src="index.js"></script>
-    <!-- Meta tag -->
+    
     <title>설문조사</title>
-    <link rel="icon" href="">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -15,21 +14,23 @@
         <input type="button" value="질문 추가" onclick="add_Q()">
         <div id="Srvy_title"><input type="text" value="설문조사 제목" placeholder="설문조사 제목"></div>
         <div id="QA_section">
-            <div id="question_1"><input type="text" value="질문1" placeholder="질문1">
+            <div id="question_1" style="background-color: rgb(216, 224, 255); margin-top: 10px;"><input type="text" value="질문1" placeholder="질문1">
                 <div>
-                    <select name="" id="">
-                        <option value="1" name="MCQ">객관식</option>
-                        <option value="2" name="srt_ansr">단답형</option>
-                        <option value="3" name="essay">서술형</option>
+                    <select id="select_value" onchange="change_form(this.value)">
+                        <option value="multi" name="MCQ">객관식</option>
+                        <option value="short" name="srt_ansr">단답형</option>
+                        <option value="descript" name="descriptive">서술형</option>
                     </select>
                 </div>
-                <label><input type="checkbox">중복선택 허용</label>
-                <div id="choice_opt_section">
-                    <div><input type="text" value="1번 보기" placeholder="1번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div>
-                    <div><input type="text" value="2번 보기" placeholder="2번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div>
+                <div id="change_section"> <!-- 객관식/단답형/서술형 바뀌는 부분 -->
+                    <label><input type="checkbox">중복선택 허용</label>
+                    <div id="choice_opt_section">
+                        <div><input type="text" value="1번 보기" placeholder="1번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div>
+                        <div><input type="text" value="2번 보기" placeholder="2번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div>
+                    </div>
+                    <input type="button" value="보기 추가" onclick="add_opt()">
                 </div>
-                <input type="button" value="보기 추가" onclick="add_opt()">
-                <input type="button" value="질문 삭제" onclick="del(e)">
+                <input type="button" value="질문 삭제" onclick="del(this)">
             </div>
         </div>
     </div>
