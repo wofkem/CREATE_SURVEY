@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    
-    <script defer src="index.js"></script>
-    
-    <title>설문조사</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-    <div id="main_data">
-        <div>설문 생성페이지 입니다</div>
-        <input type="button" value="질문 추가" onclick="add_Q()">
-        <div id="Srvy_title">설문조사 제목<input type="text" value="설문조사 제목" placeholder="설문조사 제목"></div>
-        <div id="Srvy_discript">설명<textarea name="" id="" cols="30" rows="10"></textarea>
-        <div id="QA_section">
-            <div id="question_1" style="background-color: rgb(227, 227, 227); margin-top: 10px; padding-top: 10px;"><input type="text" value="질문1" placeholder="질문1">
-                <div>
-                    <select id="select_value" onchange="change_form(this.value)">
-                        <option value="multi" name="MCQ">객관식</option>
-                        <option value="short" name="srt_ansr">단답형</option>
-                        <option value="descript" name="descriptive">서술형</option>
-                    </select>
-                </div>
-                <div id="change_section"> <!-- 객관식/단답형/서술형 바뀌는 부분 -->
-                    <label><input type="checkbox">중복선택 허용</label>
-                    <div id="choice_opt_section">
-                        <div><input type="text" value="1번 보기" placeholder="1번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div>
-                        <div><input type="text" value="2번 보기" placeholder="2번 보기"><input type="button" value="보기 삭제" onclick="del(this)"></div>
-                    </div>
-                    <input type="button" value="보기 추가" onclick="add_opt()">
-                </div>
-                <input type="button" value="질문 삭제" onclick="del(this)">
-            </div>
-        </div>
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!--<link rel="stylesheet" href="output.css" />-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@200;400;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="font-Noto-font">
+        <nav
+            class="px-5 py-2 container flex flex-row justify-between bg-main-color"
+        >
+            <p class="text-white text-lg font-semibold">
+                <a href="/">I&G Survey</a>
+            </p>
+            <p class="text-white text-base/[2rem] font-thin">설문조사 목록</p>
+            <p>
+                <button
+                    class="bg-blue-600 hover:bg-blue-700 text-white hover:text-gray-300 text-xs/[2rem] px-2 rounded-md mr-1"
+                    onclick="location.href='/login'"
+                >
+                    로그인
+                </button>
+                <button
+                    class="bg-white hover:bg-gray-300 text-blue-600 text-xs/[2rem] px-3 rounded-md"
+                >
+                    회원가입
+                </button>
+            </p>
+        </nav>
+        <div id="app"></div>
+        <script src="upload.js"></script>
+    </body>
 </html>
