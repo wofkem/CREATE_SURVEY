@@ -1,7 +1,4 @@
 const root = document.getElementById('app')
-const nav=document.createElement('nav')
-nav.setAttribute('id','nav')
-root.append(nav)
 
 //content
 const content = document.createElement('div')
@@ -196,3 +193,9 @@ function popup_confirm(){
     j++
     popup_close()
 }
+
+//CSS
+content.setAttribute('class','container flex flex-col bg-sub-color min-h-screen items-center py-6 survey')
+reg_layout.setAttribute('class','flex h-248 w-264 bg-white rounded-3xl')
+lay_top_left.setAttribute('class','w-79 h-25 text-4xl justify-center font-semibold bg-main-color text-white rounded-tl-3xl')
+//pl-8 pr-8-25 pt-6-25 pb-6-5 //flex w-1/5 rounded-r-3xl justify-center items-center text-white text-3xl font-semibold bg-O-primary hover:bg-O-primary-dark hover:text-gray-300 cursor-pointer
